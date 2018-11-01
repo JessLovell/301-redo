@@ -9,6 +9,7 @@ function Image (imageItem) {
 }
 
 Image.allImages = [];
+Image.allKeywords = [];
 
 Image.prototype.render = function () {
   $('main').append('<section class="clone"><section>');
@@ -30,7 +31,9 @@ Image.readJson = () => {
         Image.allImages.push(new Image(item));
       })
     })
-    .then(Image.loadImage);
+    .then(Image.loadImage)
+    .then(Image.keywordExtractor)
+    .then(Image.populateDropDown);
 }
 
 Image.loadImage = () => {
@@ -38,3 +41,18 @@ Image.loadImage = () => {
 }
 
 $(() => Image.readJson());
+
+Image.keywordExtractor = () => {
+  Image.allImages.forEach(element => {
+    if(Image.allKeywords.indexOf(element.keyword) === -1){
+      Image.allKeywords.push(element.keyword);
+    }
+    Image.allKeywords.sort();
+  })
+}
+
+Image.populateDropDown = () => {
+  Image.allKeywords.forEach(element => {
+    $('select').append(`<option value="${element}">${element}</option>`);
+  })
+}

@@ -7,7 +7,7 @@
         <link rel= "stylesheet" href="css/styles.css">
 
         <script id="photo-template" type="text/x-handlebars-template">
-            <div class = "container {{keyword}} {{count}}">
+            <div class = "container {{keyword}} {{count}} {{name}}">
               <h2>{{name}}</h2>
               <img src="{{image_url}}">
               <p>{{description}}</p>
@@ -23,7 +23,7 @@
                 <li id="horns">Sort by Horns</li>
                 <li id="a-z">Sort Alphabetically</li>
                 <li>
-                    <form action="">
+                    <form id="search">
                         <input type="text" placeholder="Search.."></li>
                         <button type="submit">Submit</button>
                     </form>

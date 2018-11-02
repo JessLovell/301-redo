@@ -107,6 +107,17 @@ $('.page-links').on('click', () => {
   }
 });
 
-$('input').keypress(() =>{
-  console.log($('input'));
+$('#search').keypress(() =>{
+  let $search = /ab/;
+  //$('input').val()
+  Image.allImages.forEach(element => {
+    if (element.name.match($search) !== null || element.keyword.match($search) !== null){
+      console.log(`if: ${element.name}`);
+
+      // $(`.${element.name}`).show();
+    } else {
+      console.log(`else: ${element.name}`);
+      // $(`.${element.name}`).hide();
+    }
+  })
 });

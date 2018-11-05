@@ -3,11 +3,12 @@
     <head>
         <title>The Gallery of Horns</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Marvel" rel="stylesheet">
         <link rel= "stylesheet" href="css/reset.css">
         <link rel= "stylesheet" href="css/styles.css">
 
         <script id="photo-template" type="text/x-handlebars-template">
-            <div class = "container {{keyword}} {{count}} {{name}}">
+            <div class="grid-item container {{keyword}} {{count}} {{name}}">
               <h2>{{name}}</h2>
               <img src="{{image_url}}">
               <p>{{description}}</p>
@@ -23,17 +24,20 @@
                 <li id="horns">Sort by Horns</li>
                 <li id="a-z">Sort Alphabetically</li>
                 <li>
+                    <select>
+                        <option value="default">Filter by Keyword</option>
+                    </select>
+                </li>
+                <li>
                     <form id="search">
                         <input type="text" placeholder="Search.."></li>
                         <button type="submit">Submit</button>
                     </form>
             </ul>
-            <select>
-                <option value="default">Filter by Keyword</option>
-            </select>
+            
         </header>
         <main>
-            <section id="photo">
+            <section id="photo" class="grid-container">
                 
             </section>
         </main>

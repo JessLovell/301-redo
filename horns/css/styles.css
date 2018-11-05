@@ -1,3 +1,44 @@
+* {
+    outline: 1px solid black;
+}
+body {
+    margin: auto;
+    width: 97%;
+    font-family: 'Marvel', sans-serif;
+}
+
+header {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 50px;
+}
+
+main {
+    margin: auto;
+    width: auto;
+}
+
+li {
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px;
+}
+
 section img {
-    width: 100px;
+    width: 300px;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+}
+
+.grid-item {
+    background-color: lightslategray;
+    width: 300px;
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
 }

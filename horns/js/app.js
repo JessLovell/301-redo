@@ -107,17 +107,14 @@ $('.page-links').on('click', () => {
   }
 });
 
-$('#search').keypress(() =>{
-  let $search = /ab/;
-  //$('input').val()
+$('#search').on('keypress',() =>{
+  let $search = $('input').val();
+
   Image.allImages.forEach(element => {
     if (element.name.match($search) !== null || element.keyword.match($search) !== null){
-      console.log(`if: ${element.name}`);
-
-      // $(`.${element.name}`).show();
+      $(`.${element.keyword}`).show();
     } else {
-      console.log(`else: ${element.name}`);
-      // $(`.${element.name}`).hide();
+      $(`.${element.keyword}`).hide();
     }
   })
 });
